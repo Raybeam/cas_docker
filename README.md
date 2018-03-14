@@ -2,7 +2,7 @@ CAS Docker Overlay
 ==================
 # Docker Compose setup using a multi-stage build:
 * Run the following commands to generate self-signed keystore.
-```keytool -genkey -noprompt -alias cas -keystore etc/cas/thekeystore -storepass changeit -keypass changeit -validity 3650 -keysize 2048 -keyalg RSA -dname "CN=localhost, OU=MyOU, O=MyOrg, L=Somewhere, S=VA, C=US"```
+```keytool -genkey -noprompt -alias cas -keystore etc/cas/thekeystore -storepass changeit -keypass changeit -validity 3650 -keysize 2048 -keyalg RSA -dname "CN=cas, OU=MyOU, O=MyOrg, L=Somewhere, S=VA, C=US"```
 ```keytool -export -file etc/cas/config/cas.crt -storepass changeit -keystore etc/cas/thekeystore -alias cas```
 
 
@@ -29,12 +29,15 @@ To use
 * Type ctrl-c to exit, then type this to cleanup:
 ```docker-compose down --rmi all```
 
-* [Demo CAS client instructions] (https://docs.google.com/document/d/1AKcMnKP_3WxY9pk44pmL7BO-XrD0Oq-t47ya8vdxAsg/edit)
+* [Demo CAS client instructions](https://docs.google.com/document/d/1AKcMnKP_3WxY9pk44pmL7BO-XrD0Oq-t47ya8vdxAsg/edit)
 
-Notes
+Push to docker hub
 =====
+```docker-compose build cas```
+```docker-compose compose push```
 
 
 References
 ==========
 [BasedOn](https://github.com/crpeck/cas-overlay-docker)  
+[Notes](https://docs.google.com/document/d/1AKcMnKP_3WxY9pk44pmL7BO-XrD0Oq-t47ya8vdxAsg/edit)

@@ -4,3 +4,4 @@ services:
     build: .
     ports:
      - "8443:8443"
+    image: raybeam/cas-docker:latest
